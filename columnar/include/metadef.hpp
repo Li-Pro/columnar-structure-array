@@ -8,8 +8,10 @@
 
 #pragma once
 
-#include <cstddef>
-#include <memory>
+#if !defined(COLUMNAR_NOINCLUDE)
+    #include <cstddef>
+    #include <memory>
+#endif
 
 #define COLUMNAR_JOIN_UNDERSCORE_0(x, y) x ## _ ## y
 #define COLUMNAR_JOIN_UNDERSCORE_1(x, y) COLUMNAR_JOIN_UNDERSCORE_0(x, y)
@@ -100,9 +102,9 @@
 
 // Auto generated
 #define COLUMNAR_DEF_HANDLE_0()
-#define COLUMNAR_DEF_HANDLE_2(Type, Name, ...) COLUMNAR_MOD_HANDLE(Type, Name);
-#define COLUMNAR_DEF_HANDLE_4(Type, Name, ...) COLUMNAR_MOD_HANDLE(Type, Name); COLUMNAR_DEF_HANDLE_2(__VA_ARGS__)
-#define COLUMNAR_DEF_HANDLE_6(Type, Name, ...) COLUMNAR_MOD_HANDLE(Type, Name); COLUMNAR_DEF_HANDLE_4(__VA_ARGS__)
+#define COLUMNAR_DEF_HANDLE_2(Type, Name, ...) COLUMNAR_MOD_HANDLE(Type, Name)
+#define COLUMNAR_DEF_HANDLE_4(Type, Name, ...) COLUMNAR_MOD_HANDLE(Type, Name) COLUMNAR_DEF_HANDLE_2(__VA_ARGS__)
+#define COLUMNAR_DEF_HANDLE_6(Type, Name, ...) COLUMNAR_MOD_HANDLE(Type, Name) COLUMNAR_DEF_HANDLE_4(__VA_ARGS__)
 
 #define COLUMNAR_DEF_MEMBER(...) \
     COLUMNAR_JOIN_UNDERSCORE_1(COLUMNAR_DEF_MEMBER, N_EVEN_VA_ARGS(__VA_ARGS__)) (__VA_ARGS__)
