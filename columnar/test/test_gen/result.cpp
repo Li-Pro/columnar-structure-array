@@ -32,7 +32,7 @@ struct convertible
         int an_int[Num];
         convertible* a_pconvertible[Num];
 
-        constexpr columnar_handle_type operator[] (std::size_t at) { return columnar_handle_type{at, this}; };
+        constexpr columnar_handle_type operator[] (std::size_t at) { return columnar_handle_type{at, (c_array_generated_<Num>*) this}; };
     };
 
     template<template<typename S> typename Alloc>
@@ -47,7 +47,7 @@ struct convertible
 
         array_generated_(size_t count): size(count), a_double(columnar_allocator_a_double.allocate(count)), an_int(columnar_allocator_an_int.allocate(count)), a_pconvertible(columnar_allocator_a_pconvertible.allocate(count)) {}
         ~array_generated_() { columnar_allocator_a_double.deallocate(a_double, size); columnar_allocator_an_int.deallocate(an_int, size); columnar_allocator_a_pconvertible.deallocate(a_pconvertible, size); }
-        constexpr columnar_handle_type operator[] (std::size_t at) { return columnar_handle_type{at, this}; };
+        constexpr columnar_handle_type operator[] (std::size_t at) { return columnar_handle_type{at, (array_generated_<Alloc>*) this}; };
     };
 
     template<typename ArrayType>
