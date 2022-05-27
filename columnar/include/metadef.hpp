@@ -51,7 +51,7 @@
         const size_t size;
 
 #define COLUMNAR_DEF_ARRAY_POST(...) \
-        constexpr columnar_handle_type operator[] (std::size_t at) { return columnar_handle_type{at, this}; }; \
+        constexpr columnar_handle_type operator[] (std::size_t at) { return columnar_handle_type{at, (array_generated_<Alloc>*) this}; }; \
     };
 
 #define COLUMNAR_DEF_HANDLE_PRE(...) \
@@ -141,7 +141,7 @@
         using columnar_handle_type = handle_generated_<c_array_generated_<Num>>;
 
 #define COLUMNAR_DEF_C_ARRAY_POST(...) \
-        constexpr columnar_handle_type operator[] (std::size_t at) { return columnar_handle_type{at, this}; }; \
+        constexpr columnar_handle_type operator[] (std::size_t at) { return columnar_handle_type{at, (c_array_generated_<Num>*) this}; }; \
     };
     
 
