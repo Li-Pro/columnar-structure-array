@@ -41,7 +41,7 @@ This project designs a structure helper for programmers to use SoA, but to code 
 | Week | Description |
 | ---- | ----------- |
 | Week 1 | ✓ Draft high-level prototypes. |
-| Week 2 | Implement and test core C++ module. |
+| Week 2 | ✓ Implement and test core C++ module. |
 | Week 3 | Benchmark and check if requirements are met for C++ module. |
 | Week 4 | ~~Draft C++ APIs with tests.~~ |
 | Week 5 | Implement Python binding to C++ module. |
