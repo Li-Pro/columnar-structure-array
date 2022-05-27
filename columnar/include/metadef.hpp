@@ -26,6 +26,8 @@
 
 #define COLUMNAR_MOD_HANDLE(Type, Name) constexpr Type & Name() { return main_obj->Name[at_pos]; }
 
+// TODO: remove_cv
+
 #define COLUMNAR_DEF_TYPES_BLOCK(...) \
     template<template<typename> typename Alloc> struct array_generated_; \
     template<typename ArrayType> struct handle_generated_; \

@@ -3,6 +3,8 @@ SHELL = /bin/bash
 LIBCOLUMNAR_INCLUDE = ../../include
 LIBCOLUMNAR_CXXFLAGS = $(CXXFLAGS) -I $(LIBCOLUMNAR_INCLUDE) -c -std=c++14 -Wall -ggdb3
 
+TEST_ASM_FLAVOR ?= intel
+
 .PRECIOUS: %.asm
 
 .PHONY: all test clean
@@ -15,7 +17,7 @@ task_test_%: %_O0.asm %_O2.asm %_O3.asm
 	echo Done task $@
 
 %.asm: %.o
-	gdb -batch -ex "disassemble /rs test" $< > $@
+	gdb -batch -ex "set disassembly-flavor $(TEST_ASM_FLAVOR)" -ex "disassemble /rs test" $< > $@
 
 %_O0.o: %.cpp
 	g++ $(LIBCOLUMNAR_CXXFLAGS) -O0 -o $@ $^
