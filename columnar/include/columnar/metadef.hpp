@@ -170,3 +170,8 @@
     COLUMNAR_DEF_C_ARRAY(__VA_ARGS__) \
     COLUMNAR_DEF_ARRAY(__VA_ARGS__) \
     COLUMNAR_DEF_HANDLE(__VA_ARGS__)
+
+#define COLUMNAR_GEN(...)
+
+#define COLUMNAR_STRUCT(...)
+#define COLUMNAR_CLASS(...)

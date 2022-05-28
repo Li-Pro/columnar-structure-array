@@ -3,7 +3,7 @@
 ## API model
 - C++
     - C++ meta language that generates SoA from AoS-like code
-        - `COLUMNAR_GEN`
+        - `COLUMNAR_STRUCT`, `COLUMNAR_CLASS`
         - `COLUMNAR_DEF`
     - Helper utility for meta language template
         - Makefile task `libcolumnar-meta`
