@@ -3,11 +3,11 @@
 
 COLUMNAR_STRUCT( convertible,
     
-    COLUMNAR_DEF(
+    DEF(
         double, a_double,
         int, an_int,
         convertible*, a_pconvertible,
     ),
     
-    PYCOLUMNAR_GEN_PYBIND11,
-) ;
+    (PYCOLUMNAR_GEN_PYBIND11, libconvertible,),
+)
