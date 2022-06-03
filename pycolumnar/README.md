@@ -41,7 +41,8 @@
         - pybind11 generation flag: PYCOLUMNAR_GEN_PYBIND11
 
 ## Sample
-```
+- Tuple-based class
+```python
 from columnar  import colist, named_tuple, pair
 
 x = colist(pair(int, float))
@@ -66,4 +67,18 @@ tuplist = colist(TupleBasedType)
 tuplist.append(t)
 tuplist.append((2.0, 3.0))
 print(t)  # [(3.0, 2.0), (2.0, 3.0)]
+```
+
+- libcolumnar extension
+```cpp
+COLUMNAR_STRUCT( convertible,
+    
+    DEF(
+        double, a_double,
+        int, an_int,
+        convertible*, a_pconvertible,
+    ),
+    
+    (PYCOLUMNAR_GEN_PYBIND11, libconvertible,),
+)
 ```
