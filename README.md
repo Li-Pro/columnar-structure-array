@@ -44,10 +44,10 @@ This project designs a structure helper for programmers to use SoA, but to code 
 | Week 2 | ✓ Implement and test core C++ module. |
 | Week 3 | ✓ Benchmark and check if requirements are met for C++ module. |
 | Week 4 | ~~Draft C++ APIs with tests.~~ |
-| Week 5 | Implement Python binding to C++ module. |
-| Week 6 | Draft Python APIs with tests. |
-| Week 7 | Overall test & re-benchmark. Draft project report & documentation. |
-| Week 8 | Optimizations & addtional features. |
+| Week 5 | ✓ Implement Python binding to C++ module. |
+| Week 6 | ~~Draft Python APIs with tests.~~ |
+| Week 7 | ✓ Overall test & re-benchmark. Draft project report & documentation. |
+| Week 8 | ~~Optimizations & addtional features.~~ |
 
 ## Reference
 - https://yyc.solvcon.net/en/latest/nsd/schedule/22sp_nycu/schedule.html#columnar-array
